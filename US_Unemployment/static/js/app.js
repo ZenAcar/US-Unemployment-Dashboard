@@ -276,8 +276,8 @@ function loadStates(data) {
 
 function loadYears() {
     // Load theYears dropdown
-    let columns = ['2015', '2016', '2017', '2018', '2019', '2020']
-    loadDropDown('#selYear', columns, columns[columns.length - 1])
+    let columns = ['2015', '2016', '2017', '2018', '2019', '2020', '2025']
+    loadDropDown('#selYear', columns, '2020')
 }
 
 function updateGEOJSON() {
