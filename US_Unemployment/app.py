@@ -20,7 +20,12 @@ print(sys.path)
 #################################################
 
 from flask_sqlalchemy import SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///static/assets/data/us_unemployment.db"
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+db_path = os.path.join(BASE_DIR, 'static/assets/data/us_unemployment.db')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or 'sqlite:///' + db_path
 
 # # Remove tracking modifications
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
